@@ -58,11 +58,11 @@ public class Main {
                 //læs en linje
                 String currentLine = sc1.nextLine();
 
-                //Gem værdierne i et array og split værdierne ved ';'
+                //Gem værdierne i et array og split værdierne ved ';'       ---> mangler at replace ','
                 String[] datas = currentLine.split(";");
 
                 //lav datalinjen som skal gemmes i de forskellige kolonner
-                String dataLine = datas[0] + "," + datas[1] + "," + datas[2] + "," + datas[3] + "," + datas[4] + "," + datas[5];
+                String dataLine = "'" + datas[0] + "', '" + datas[1] + "', '" + datas[2] + "', '" + datas[3] + "', '" + datas[4] + "', '" + datas[5] + "'";
 
                 //Definer hvordan linien skal skrives i MySQL Workbench
                 String insertInto = "INSERT INTO " + filename + "\nVALUES(" + dataLine + ");";
